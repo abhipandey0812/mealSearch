@@ -47,6 +47,14 @@ form button {
   margin: 0;
   border: 1px solid #dedede;
 }
+#result-heading {
+  margin: 10px 0;
+}
+.showMenu {
+  border: none;
+  padding: 8px 10px;
+  margin: 0;
+}
 .meals {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -82,14 +90,23 @@ form button {
   opacity: 1;
   transform: scale(1.1);
 }
+#single-meal {
+  margin-top: 40px;
+}
 .single-meal {
-  width: 80%;
-  border-top: 5px dotted brown;
-  margin-top: 30px;
-  flex-wrap: wrap;
+  width: 100%;
+  border: 5px dashed #e09850;
+  padding: 10px;
+  margin-top: 50px;
+  text-align: center;
+  margin: 0;
 }
 .single-meal p {
   font-size: 12px;
+  text-align: center;
+  padding: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
 }
 .single-meal ul {
   text-align: start;
@@ -98,6 +115,14 @@ form button {
 .single-meal ul li {
   list-style-type: none;
   font-size: 12px;
+  display: inline-block;
+  border: 2px solid #fff;
+  padding: 2px;
+  margin: 3px;
+  color: #2d2013;
+  background-color: #fff;
+  font-weight: bold;
+  border-radius: 3px;
 }
 .single-meal img {
   height: 400px;

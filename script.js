@@ -41,6 +41,17 @@ function getMealById(mealId) {
     .then((data) => displayMealDetails(data.meals[0]));
 }
 
+function getRandomMeal() {
+  resultHeading.innerHTML = "";
+  mealsEl.innerHTML = "";
+  fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+    .then((res) => res.json())
+    .then((data) => {
+      const meal = data.meals[0];
+      displayMealDetails(meal);
+    });
+}
+
 const searchMeal = (e) => {
   e.preventDefault();
 
@@ -87,6 +98,9 @@ const searchMeal = (e) => {
 
 //Event Listners
 mealsEl.addEventListener("click", (e) => {
+  resultHeading.innerHTML = "";
+  mealsEl.innerHTML = "";
+
   const mealInfo = e.path.find((item) => {
     if (item.classList) {
       return item.classList.contains("meal-info");
@@ -97,7 +111,10 @@ mealsEl.addEventListener("click", (e) => {
 
   if (mealInfo) {
     const mealId = mealInfo.getAttribute("data-mealId");
+
     getMealById(mealId);
   }
 });
+
 submit.addEventListener("submit", searchMeal);
+random.addEventListener("click", getRandomMeal);
