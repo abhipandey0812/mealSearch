@@ -82,7 +82,37 @@ form button {
   opacity: 1;
   transform: scale(1.1);
 }
-
+.single-meal {
+  width: 80%;
+  border-top: 5px dotted brown;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+.single-meal p {
+  font-size: 12px;
+}
+.single-meal ul {
+  text-align: start;
+  margin-top: 0;
+}
+.single-meal ul li {
+  list-style-type: none;
+  font-size: 12px;
+}
+.single-meal img {
+  height: 400px;
+  width: 400px;
+  border: 4px solid #fff;
+}
+.single-meal h2 {
+  margin-top: 0;
+}
+.info {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+}
 #result-heading {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
@@ -96,9 +126,35 @@ form button {
   .meals {
     grid-template-columns: repeat(3, 1fr);
   }
+  .single-meal {
+    width: 700px;
+  }
+  .single-meal img {
+    height: 300px;
+    width: 300px;
+  }
+  .info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+  }
 }
 @media (max-width: 650px) {
   .meals {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .single-meal {
+    width: 600px;
+  }
+  .single-meal img {
+    height: 250px;
+    width: 250px;
+  }
+  .info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
   }
 }

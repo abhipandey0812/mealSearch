@@ -6,6 +6,41 @@ const searchKeyword = document.getElementById("search"),
   mealsEl = document.getElementById("meals"),
   singleMealEl = document.getElementById("single-meal");
 
+function displayMealDetails(meal) {
+  console.log(meal);
+  let ingredients = [];
+  for (i = 1; i <= 20; i++) {
+    if (meal[`strIngredient${i}`]) {
+      ingredients.push(
+        `${meal[`strIngredient${i}`]} - ${meal[`strMeasure${i}`]}`
+      );
+    } else {
+      break;
+    }
+  }
+  singleMealEl.innerHTML = `
+  <div class='single-meal'>
+  <h1>${meal.strMeal}</h1>
+  <h3>${meal.strCategory}</h3>
+  <h4>${meal.strArea}</h4>
+  <div class='info'>
+  <img src=${meal.strMealThumb}>
+  <ul>
+   <h2>Ingridients</h2>
+   ${ingredients.map((ingridient) => `<li>${ingridient}</li>`)}
+  </ul>
+  </div>
+  <p>${meal.strInstructions}</p>
+  </div>
+  `;
+}
+
+function getMealById(mealId) {
+  fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
+    .then((res) => res.json())
+    .then((data) => displayMealDetails(data.meals[0]));
+}
+
 const searchMeal = (e) => {
   e.preventDefault();
 
@@ -51,4 +86,18 @@ const searchMeal = (e) => {
 };
 
 //Event Listners
+mealsEl.addEventListener("click", (e) => {
+  const mealInfo = e.path.find((item) => {
+    if (item.classList) {
+      return item.classList.contains("meal-info");
+    } else {
+      return false;
+    }
+  });
+
+  if (mealInfo) {
+    const mealId = mealInfo.getAttribute("data-mealId");
+    getMealById(mealId);
+  }
+});
 submit.addEventListener("submit", searchMeal);
