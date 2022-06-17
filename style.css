@@ -92,12 +92,13 @@ form button {
 }
 #single-meal {
   margin-top: 40px;
+  width: 90%;
 }
 .single-meal {
-  width: 100%;
+  width: 90%;
   border: 5px dashed #e09850;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 50px 10px;
   text-align: center;
   margin: 0;
 }
@@ -137,6 +138,7 @@ form button {
   margin-top: 40px;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 40px;
 }
 #result-heading {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -155,14 +157,18 @@ form button {
     width: 700px;
   }
   .single-meal img {
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
   }
   .info {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+  }
+  .single-meal ul {
+    text-align: center;
+    margin-top: 20px;
   }
 }
 @media (max-width: 650px) {
@@ -173,13 +179,17 @@ form button {
     width: 600px;
   }
   .single-meal img {
-    height: 250px;
-    width: 250px;
+    height: 450px;
+    width: 450px;
   }
   .info {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 40px;
+  }
+  .single-meal ul {
+    text-align: center;
+    margin-top: 20px;
   }
 }

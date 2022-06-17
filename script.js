@@ -22,7 +22,9 @@ function displayMealDetails(meal) {
   <div class='single-meal'>
   <h1>${meal.strMeal}</h1>
   <h3>${meal.strCategory}</h3>
-  <h4>${meal.strArea}</h4>
+  <h4 style='color:#d76311;'><i class= "fas fa-map-marker"></i>${
+    meal.strArea
+  }</h4>
   <div class='info'>
   <img src=${meal.strMealThumb}>
   <ul>
@@ -30,6 +32,7 @@ function displayMealDetails(meal) {
    ${ingredients.map((ingridient) => `<li>${ingridient}</li>`)}
   </ul>
   </div>
+  <h2>Instructions</h2>
   <p>${meal.strInstructions}</p>
   </div>
   `;
