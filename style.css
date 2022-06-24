@@ -83,9 +83,9 @@ form button {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
+  justify-content: center;
   transition: 0.3s ease-in;
   flex-direction: column;
   opacity: 0;
@@ -194,9 +194,11 @@ form button {
   .meal-info {
     margin: 0 10px;
     opacity: 1;
-    background: transparent;
     color: black;
+    overflow: auto;
+    opacity: 1;
   }
+
   .info {
     flex-direction: column;
     justify-content: center;
